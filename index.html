@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Juego Divertido</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <style type="text/tailwindcss">
+      @import "tailwindcss"; 
+ 
+     @theme {
+       --font-sans: ui-sans-serif, system-ui, sans-serif;
+       --color-brand: #ff4500;
+     }
+ 
+     @layer base {
+       p {@apply mb-2 leading-relaxed text-gray-700;}       
+                               input {@apply h-[1.85rem] rounded-sm border border-gray-500 px-2 text-sm text-pink-800 font-serif}
+          button {@apply rounded-sm border border-gray-500 px-4 py-[0.5] }
+     }
+   </style>
+</head>
+
+<body class="mx-auto w-[95%] sm:w-[90%] lg:w-4/5">
+   <h1 class="text-2xl font-bold text-rose-900">TEST DIVERTIDO</h1>
+
+   <p id="p1" class="mt-3">1. Ordena estos animales en orden de preferencia:</p>
+   <!-- CAMBIO: cada fila usa la misma grid para alinear etiquetas e inputs -->
+   <blockquote class="space-y-2 pl-4">
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="vaca-value">Vaca:</label>
+         <input id="vaca-value" type="number" min="1" max="5" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="tigre-value">Tigre:</label>
+         <input id="tigre-value" type="number" min="1" max="5" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="oveja-value">Oveja:</label>
+         <input id="oveja-value" type="number" min="1" max="5" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="caballo-value">Caballo:</label>
+         <input id="caballo-value" type="number" min="1" max="5" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="mono-value">Mono:</label>
+         <input id="mono-value" type="number" min="1" max="5" class="w-full md:w-[19rem]">
+      </p>
+   </blockquote>
+
+   <p id="p2">2. Escribe una palabra que describa lo siguiente:</p>
+   <blockquote class="space-y-2 pl-4">
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="perro-value">Perro:</label>
+         <input id="perro-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="gato-value">Gato:</label>
+         <input id="gato-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="rata-value">Rata:</label>
+         <input id="rata-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="cafe-value">Café:</label>
+         <input id="cafe-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="mar-value">Mar:</label>
+         <input id="mar-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+   </blockquote>
+
+   <p id="p3">3. Indica alguien importante para ti, que te sugiera este color:</p>
+   <blockquote class="space-y-2 pl-4">
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4 mb-2">
+         <label for="amarillo-value">Amarillo:</label>
+         <input id="amarillo-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="naranja-value">Naranja:</label>
+         <input id="naranja-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="blanco-value">Blanco:</label>
+         <input id="blanco-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="rojo-value">Rojo:</label>
+         <input id="rojo-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+      <p class="grid grid-cols-1 md:grid-cols-[400px_minmax(0,1fr)] items-center gap-4">
+         <label for="verde-value">Verde:</label>
+         <input id="verde-value" type="text" class="w-full md:w-[19rem]">
+      </p>
+   </blockquote>
+
+   <p class="py-2">
+      <button id="btn-resultados" class="bg-rose-900 text-white font-bold" type="button">
+         resultados
+      </button>
+   </p>
+
+   <div id="resultados" class="pb-6"></div>
+
+   <script>
+      const animales = {
+         vaca: "Tu carrera",
+         tigre: "El orgullo",
+         oveja: "El amor",
+         caballo: "La familia",
+         mono: "El dinero"
+      };
+
+      const palabras = {
+         perro: "Tu personalidad",
+         gato: "Tu pareja",
+         rata: "Lo que más odias",
+         cafe: "Para ti el sexo es",
+         mar: "Y la vida..."
+      };
+
+      const colores = {
+         amarillo: "Nunca te olvidará",
+         naranja: "Puede ser tu gran amigo/a",
+         blanco: "Tu alma gemela",
+         rojo: "Realmente amas a...",
+         verde: "Siempre estará en tu memoria"
+      };
+
+      const resultadoBox = document.getElementById("resultados");
+      const botonResultados = document.getElementById("btn-resultados");
+
+      botonResultados.addEventListener("click", calcular);
+
+      function agregarTitulo(texto) {
+         const h2 = document.createElement("h2");
+         h2.className = "mt-3 text-lg font-bold text-rose-900";
+         h2.textContent = texto;
+         resultadoBox.appendChild(h2);
+      }
+
+      function agregarLinea(texto) {
+         const p = document.createElement("p");
+         p.textContent = texto;
+         resultadoBox.appendChild(p);
+      }
+
+      function leerNumeroDeRanking(animal) {
+         const input = document.getElementById(animal + "-value");
+         const valor = input.value.trim();
+
+         if (!valor) {
+            throw new Error("Completa todos los animales con valores del 1 al 5.");
+         }
+
+         const numero = Number(valor);
+         if (!Number.isInteger(numero) || numero < 1 || numero > 5) {
+            throw new Error("Cada animal debe tener un número entero entre 1 y 5.");
+         }
+
+         return numero;
+      }
+
+      function calcular() {
+         resultadoBox.innerHTML = "";
+
+         // --- 1. ANIMALES (ordenar por número)
+         let ranking = [];
+         const usados = new Set();
+
+         for (let animal in animales) {
+            let valor;
+
+            try {
+               valor = leerNumeroDeRanking(animal);
+            } catch (error) {
+               alert(error.message);
+               return;
+            }
+
+            if (usados.has(valor)) {
+               alert("No repitas números: usa cada valor del 1 al 5 una sola vez.");
+               return;
+            }
+
+            usados.add(valor);
+
+            ranking.push({
+               nombre: animal,
+               valor: valor
+            });
+         }
+
+         // ordenar por preferencia
+         ranking.sort((a, b) => a.valor - b.valor);
+
+         console.log("=== PRIORIDADES ===");
+         agregarTitulo("PRIORIDADES");
+         ranking.forEach(item => {
+            console.log(animales[item.nombre]);
+            agregarLinea(animales[item.nombre]);
+         });
+
+
+         // --- 2. PALABRAS
+         console.log("=== COMO VES LA VIDA ===");
+         agregarTitulo("COMO VES LA VIDA");
+         for (let key in palabras) {
+            let valor = document.getElementById(key + "-value").value.trim();
+            const texto = valor || "(sin respuesta)";
+            console.log(palabras[key] + ": " + texto);
+            agregarLinea(palabras[key] + ": " + texto);
+         }
+
+
+         // --- 3. COLORES
+         console.log("=== TU GENTE ===");
+         agregarTitulo("TU GENTE");
+         for (let key in colores) {
+            let valor = document.getElementById(key + "-value").value.trim();
+            const texto = valor || "(sin respuesta)";
+            console.log(colores[key] + ": " + texto);
+            agregarLinea(colores[key] + ": " + texto);
+         }
+      }
+   </script>
+</body>
+
+
+
+</html>
